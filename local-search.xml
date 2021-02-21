@@ -5,6 +5,32 @@
   
   <entry>
     <title></title>
+    <link href="/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <url>/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">title:模块的加载机制<br>categories:<br><span class="hljs-bullet">- </span>1.模块的加载机制<br><span class="hljs-bullet">- </span>2.内置模块的加载机制<br><span class="hljs-bullet">- </span>3.自定义模块的加载机制<br><span class="hljs-bullet">- </span>4.第三方模块的加载机制<br></code></pre></td></tr></table></figure><h4 id="1-模块的加载机制"><a href="#1-模块的加载机制" class="headerlink" title="1.模块的加载机制"></a>1.模块的加载机制</h4><p><strong>模块在第一次加载后会被缓存</strong>。 这也意味着多次调用 require() 不会导致模块的代码被执行多次。<br>注意：不论是内置模块、用户自定义模块、还是第三方模块，它们都会优先从缓存中加载，从而<strong>提高模块的加载效率</strong>。</p><h4 id="2-内置模块的加载机制"><a href="#2-内置模块的加载机制" class="headerlink" title="2.内置模块的加载机制"></a>2.内置模块的加载机制</h4><p>内置模块是由Node.js 官方提供的模块，内置模块的加载优先级最高。</p><p>例如，require(‘fs’) 始终返回内置的fs 模块，即使在 node_modules 目录下有相同名字的包也叫作 fs。</p><h4 id="3-自定义模块的加载机制"><a href="#3-自定义模块的加载机制" class="headerlink" title="3.自定义模块的加载机制"></a>3.自定义模块的加载机制</h4><p>使用 require() 加载自定义模块时，必须指定以 ./ 或 ../ 开头的<strong>路径标识符</strong>。在加载自定义模块时，如果没有指定 ./ 或 ../这样的路径标识符，则 node 会把它当作内置模块或第三方模块进行加载。</p><h4 id="4-第三方模块的加载机制"><a href="#4-第三方模块的加载机制" class="headerlink" title="4.第三方模块的加载机制"></a>4.第三方模块的加载机制</h4><p>如果传递给 require() 的模块标识符不是一个内置模块，也没有以 ‘./’ 或 ‘../’ 开头，则 Node.js 会从当前模块的父<br>目录开始，尝试从 /node_modules 文件夹中加载第三方模块。<br>如果没有找到对应的第三方模块，则移动到再上一层父目录中，进行加载，直到文件系统的根目录。<br>例如，假设在 ‘C:\Users\itheima\project\foo.js’ 文件里调用了 require(‘tools’)，则 Node.js 会按以下顺序查找：<br>① C:\Users\itheima\project\node_modules\tools<br>② C:\Users\itheima\node_modules\tools<br>③ C:\Users\node_modules\tools<br>④ C:\node_modules\tools</p><h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>当把目录作为模块标识符，传递给 require() 进行加载的时候，有三种加载方式：<br>① 在被加载的目录下查找一个叫做 package.json 的文件，并寻找 main 属性，作为 require() 加载的入口<br>② 如果目录里没有 package.json 文件，或者 main 入口不存在或无法解析，则 Node.js 将会试图加载目录下的 index.js 文件。<br>③ 如果以上两步都失败了，则 Node.js 会在终端打印错误消息，报告模块的缺失：Error: Cannot find module ‘xxx</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2021/02/21/npm%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"/>
+    <url>/2021/02/21/npm%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">title:</span>npm相关命令<br><span class="hljs-symbol">categories:</span><br>- npm 笔记<br></code></pre></td></tr></table></figure><h4 id="1-包管理器"><a href="#1-包管理器" class="headerlink" title="1.包管理器"></a>1.包管理器</h4><p>Node.js 使用一款 npm 包管理器来管理所有的第三方包</p><p>在 npm 网站上搜索你想要的包：<a href="https://www.npmjs.com/">https://www.npmjs.com/</a></p><p>在 npm 上下载包： <a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p><h4 id="2-npm的一些常用命令"><a href="#2-npm的一些常用命令" class="headerlink" title="2.npm的一些常用命令"></a>2.npm的一些常用命令</h4><p>npm  -v   ：查看在自己电脑本机的npm</p><p>npm  i  包的具体名称    ：下载一个指定的包</p><p>npm  view  包的具体名称  ： 查看一个指定包</p><p>npm  i  包的具体名称@版本号  ：下载指定版本的包</p><p>npm init -y   :快速创建包管理配置文件(<strong>在项目的根目录下执行此命令</strong>)</p><p>npm install  :其他项目成员在执行此命令时，会自动根据 package.json 文件中记录的包名称和版本信息全部进行下载</p><h6 id="npm-uninstall-包名称-：-卸载指定的包"><a href="#npm-uninstall-包名称-：-卸载指定的包" class="headerlink" title="npm uninstall 包名称 ： 卸载指定的包"></a>npm uninstall 包名称 ： 卸载指定的包</h6><p>注意：</p><p>1.当命令执行成功后， dependencies 配置项下的包会自动移除</p><p>2.卸载包的时候不需要指定版本号</p><p> devDependencies 配置作用 </p><p>​      只在本地开发测试阶段需要用到的包，一般记录在 devDependencies 配置项中，后期在进行项目打包上线的</p><p>​    时候，并不会把这些包携带到线上环境</p><p>​      <code>npm i --save-dev 包名称@版本号</code> 或 <code>npm i -D 包名称@版本号</code> ：   安装开发测试阶段用到的包</p><p>npm config set registry=<a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a> ：更换国内的源</p><p>npm config get registry  ：检查源有没有更换成功</p><p>借助cnpm 这个包，提供了下载命令<strong>cnpm i</strong> 包名称</p><p>npm  i -g nrm   =&gt; nrm ls =&gt;nrm use taobao</p><h4 id="3-npm-的包从作用域上可以分为："><a href="#3-npm-的包从作用域上可以分为：" class="headerlink" title="3.npm 的包从作用域上可以分为："></a>3.npm 的包从作用域上可以分为：</h4><ol><li>项目包： 被安装到项目的 node_modules 目录中的包，只能在当前项目下进行使用</li></ol><p>​      - [核心依赖包] 线上环境用到的依赖包： npm i 包名称</p><p>​      - [开发依赖包] 开发测试环境用到的依赖包：npm i -D 包名称</p><p>​    2. 全局包： 被下载到 node 安装位置 node_modules 目录下的包，可以在全局范围(任意目录)内使用</p><p>​      安装命令： npm i -g 包名称</p><p>​      卸载命令： npm uninstall -g 包名称</p><h4 id="4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包"><a href="#4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包" class="headerlink" title="4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包"></a>4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包</h4><p>​    1. 安装全局包： npm i -g i5ting_toc </p><ol start="2"><li>使用全局命令： <code>i5ting_toc -f 要转换的md文件 index.html</code></li></ol><h4 id="5-发布包的步骤"><a href="#5-发布包的步骤" class="headerlink" title="5.发布包的步骤:"></a>5.发布包的步骤:</h4><p>​      1. 编写包的说明文档 </p><p>​      在包的根目录下添加文件 README.md 文件</p><p>​      2. 注册一个 npm 账号</p><p>​      打开注册网址: <a href="https://www.npmjs.com/signup">https://www.npmjs.com/signup</a></p><p>​      3. pc端打开注册邮箱进行确认</p><p>​      点击蓝色按钮 Verify Email</p><p>​      4. 在包的发布目录下面执行命令</p><p>​      <code>npm publish</code></p><p>​      5. 删除已经发布的包</p><p>​      <code>npm unpublish 包名称 --force</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
     <link href="/2021/02/09/js%E9%AB%98%E7%BA%A7%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <url>/2021/02/09/js%E9%AB%98%E7%BA%A7%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
     
