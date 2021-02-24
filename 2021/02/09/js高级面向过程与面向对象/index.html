@@ -279,8 +279,6 @@
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类有加法方法</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">x, y</span>)</span> &#123;<br><span class="hljs-built_in">this</span>.x = x;<br><span class="hljs-built_in">this</span>.y = y;<br>&#125;<br><span class="hljs-function"><span class="hljs-title">sum</span>(<span class="hljs-params"></span>)</span> &#123;<br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.x + <span class="hljs-built_in">this</span>.y);<br>&#125;<br>&#125;<br><span class="hljs-comment">// 子类继承父类加法方法 同时 扩展减法方法</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">x, y</span>)</span> &#123;<br><span class="hljs-comment">// 利用super 调用父类的构造函数 super 必须在子类this之前调用,放到</span><br><span class="hljs-built_in">this</span>之后会报错<br><span class="hljs-built_in">super</span>(x, y);<br><span class="hljs-built_in">this</span>.x = x;<br><span class="hljs-built_in">this</span>.y = y;<br>&#125;<br><span class="hljs-function"><span class="hljs-title">subtract</span>(<span class="hljs-params"></span>)</span> &#123;<br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.x ‐ <span class="hljs-built_in">this</span>.y);<br>&#125;<br>&#125;<br><span class="hljs-keyword">var</span> son = <span class="hljs-keyword">new</span> Son(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>);<br>son.subtract(); <span class="hljs-comment">//2</span><br>son.sum();<span class="hljs-comment">//8</span><br></code></pre></td></tr></table></figure>
 <p>结果为：</p>
-<p>2</p>
-<p>8</p>
 <ol start="4">
 <li>时刻注意this的指向问题,类里面的共有的属性和方法一定要加this使用.</li>
 <li>constructor中的this指向的是new出来的实例对象</li>
@@ -315,7 +313,7 @@
                     
                     
                       <a href="/2021/02/09/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">尽在吾辈！！！！</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
