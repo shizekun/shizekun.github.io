@@ -181,7 +181,7 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/27/session%E5%92%8Cjwt%E7%9A%84%E8%AE%A4%E8%AF%81%E6%96%B9%E6%A1%88/"></a>
+        <a href="/2021/02/27/session%E5%92%8Cjwt%E7%9A%84%E8%AE%A4%E8%AF%81%E6%96%B9%E6%A1%88/">session的认证方案</a>
       </h1>
 
       <p class="index-excerpt">
@@ -190,11 +190,10 @@
           
             
           
-          
-title:session和jwt的认证方案session的认证方案：1.安装 express-session中间件
+          session的认证方案：1.安装 express-session中间件
 1npm insrall express-session
 2.配置 express-session 中间件
-1234567891011//1. 导入 session 中间件const session = require(&#x27;express-session&#x27;)//
+1234567891011//1. 导入 session 中间件const session = require(&#x27;express-session&#x27;)//2.配置 Session 中间件app.use
         </a>
       </p>
 
@@ -219,7 +218,7 @@ title:session和jwt的认证方案session的认证方案：1.安装 express-sess
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/24/MYSQL%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"></a>
+        <a href="/2021/02/24/MYSQL%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">MySQL和JWT 的基本使用</a>
       </h1>
 
       <p class="index-excerpt">
@@ -228,8 +227,7 @@ title:session和jwt的认证方案session的认证方案：1.安装 express-sess
           
             
           
-          
-title:MySQL 的基本使用DataType 数据类型：int    整数
+          DataType 数据类型：int    整数
 varchar(len)    字符串
 tinyint(1)    布尔值
 字段的特殊标识：
@@ -237,7 +235,7 @@ PK (Primary Key)    主键、唯一标识
 NN (Not Null)    值不允许为空
 UQ (Unique)        值唯一
 AI (Auto Increment)    值自动增长
-1.使用 SQ
+1.使用 SQL 管理数据库使用SQL增、删、改、
         </a>
       </p>
 
@@ -262,7 +260,56 @@ AI (Auto Increment)    值自动增长
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/21/npm%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"></a>
+        <a href="/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">模块的加载机制</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
+          
+          
+            
+          
+          1.模块的加载机制模块在第一次加载后会被缓存。 这也意味着多次调用 require() 不会导致模块的代码被执行多次。注意：不论是内置模块、用户自定义模块、还是第三方模块，它们都会优先从缓存中加载，从而提高模块的加载效率。
+2.内置模块的加载机制内置模块是由Node.js 官方提供的模块，内置模块的加载优先级最高。
+例如，require(‘fs’) 始终返回内置的fs 模块，即使在 node_mo
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 20:20" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/1-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">1.模块的加载机制</a>
+            
+              <a href="/categories/1-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/2-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">2.内置模块的加载机制</a>
+            
+              <a href="/categories/1-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/2-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">3.自定义模块的加载机制</a>
+            
+              <a href="/categories/1-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/2-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/4-%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">4.第三方模块的加载机制</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/npm%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">npm相关命令</a>
       </h1>
 
       <p class="index-excerpt">
@@ -271,15 +318,15 @@ AI (Auto Increment)    值自动增长
           
             
           
-          
-title:npm相关命令1.包管理器Node.js 使用一款 npm 包管理器来管理所有的第三方包
+          1.包管理器Node.js 使用一款 npm 包管理器来管理所有的第三方包
 在 npm 网站上搜索你想要的包：https://www.npmjs.com/
 在 npm 上下载包： https://registry.npmjs.org/
 2.npm的一些常用命令查看在自己电脑本机的npm:
 1npm  -v 
 下载一个指定的包:
 1npm  i  包的具体名称  
-查看一
+查看一个指定包
+1npm  vie
         </a>
       </p>
 
@@ -304,7 +351,7 @@ title:npm相关命令1.包管理器Node.js 使用一款 npm 包管理器来管�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/09/js%E9%AB%98%E7%BA%A7%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"></a>
+        <a href="/2021/02/09/js%E9%AB%98%E7%BA%A7%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">JS高级-对象与面向对象</a>
       </h1>
 
       <p class="index-excerpt">
@@ -313,10 +360,10 @@ title:npm相关命令1.包管理器Node.js 使用一款 npm 包管理器来管�
           
             
           
-          
-title:JS高级-对象与面向对象JavaScript高级第01天笔记1.面向过程与面向对象1.1面向过程面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次调用就可以了。
+          JavaScript高级第01天笔记1.面向过程与面向对象1.1面向过程面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次调用就可以了。
 1.2面向对象面向对象是把事务分解成为一个个对象，然后由对象之间分工与合作。
-1.3面向过程与面向对象对比面向过程优点：性能比面向对象高，适合跟硬件联系很紧密的东西，例如单片
+1.3面向过程与面向对象对比面向过程优点：性能比面向对象高，适合跟硬件联系很紧密的东西，例如单片机就采用的面向过程编程。
+缺点：不易维
         </a>
       </p>
 
