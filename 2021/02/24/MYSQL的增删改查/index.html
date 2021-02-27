@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      318 字
+      331 字
     </span>
   
 
@@ -227,8 +227,8 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h3 id="MySQL-的基本使用"><a href="#MySQL-的基本使用" class="headerlink" title="MySQL 的基本使用"></a>MySQL 的基本使用</h3><p>DataType 数据类型：</p>
-<p>int    整数</p>
+              <hr>
+<h2 id="title-MySQL-的基本使用"><a href="#title-MySQL-的基本使用" class="headerlink" title="title:MySQL 的基本使用"></a>title:MySQL 的基本使用</h2><h3 id="DataType-数据类型："><a href="#DataType-数据类型：" class="headerlink" title="DataType 数据类型："></a>DataType 数据类型：</h3><p>int    整数</p>
 <p>varchar(len)    字符串</p>
 <p>tinyint(1)    布尔值</p>
 <p>字段的特殊标识：</p>
@@ -245,23 +245,23 @@
 <p>*<em>where条件、and和or运算符、order by 排序、count(</em>)函数**</p>
 <p>使用例子：</p>
 <p>– 查询users表中所有列的数据</p>
-<p>select * from users</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> users<br></code></pre></td></tr></table></figure>
 <p>– 从 users 表中查询指定 username 和 status 列的数据</p>
-<p>select  username, status  from  users</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">select</span>  username, status  <span class="hljs-keyword">from</span>  users<br></code></pre></td></tr></table></figure>
 <p>– 向 users 表中插入一条数据 username 是 hutao，password 是 admin123</p>
-<p>insert  into  users (username,password) values(hutao,admin123);</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">insert</span>  <span class="hljs-keyword">into</span>  users (username,<span class="hljs-keyword">password</span>) <span class="hljs-keyword">values</span>(hutao,admin123);<br></code></pre></td></tr></table></figure>
 <p>– 修改 username 为 xm 的这条数据的密码，修改为abcdef</p>
-<p>update  users  set  password=’abcdef’  where  username=’xm’</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">update <span class="hljs-built_in"> users </span> <span class="hljs-builtin-name">set</span>  <span class="hljs-attribute">password</span>=<span class="hljs-string">&#x27;abcdef&#x27;</span>  where  <span class="hljs-attribute">username</span>=<span class="hljs-string">&#x27;xm&#x27;</span><br></code></pre></td></tr></table></figure>
 <p>– 修改 username 为xm 的这条数据的密码，改为abcdef和 status改为1</p>
-<p>update  users  set  password=’abcdef’,status=1  where  username=’xm’</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">update <span class="hljs-built_in"> users </span> <span class="hljs-builtin-name">set</span>  <span class="hljs-attribute">password</span>=<span class="hljs-string">&#x27;abcdef&#x27;</span>,status=1  where  <span class="hljs-attribute">username</span>=<span class="hljs-string">&#x27;xm&#x27;</span><br></code></pre></td></tr></table></figure>
 <p>– 删除 users 表中id等于3 的那行数据</p>
-<p>delete  from  users  where  id=’3’</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">delete</span>  <span class="hljs-keyword">from</span>  users  <span class="hljs-keyword">where</span>  id=<span class="hljs-string">&#x27;3&#x27;</span><br></code></pre></td></tr></table></figure>
 <p>– 查询表中id 不等于 5 的用户</p>
-<p>select  *  from  users  where  id!=5;</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">select</span>  *  <span class="hljs-keyword">from</span>  users  <span class="hljs-keyword">where</span>  id!=<span class="hljs-number">5</span>;<br></code></pre></td></tr></table></figure>
 <p>– 查询表中id 的值在 2到6之间的用户</p>
-<p>select * from users where id between 2 and 6</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">select * <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> <span class="hljs-built_in">id</span> <span class="hljs-keyword">between</span> <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
 <p>– 查询表中 username 中带  ‘123’ 的用户</p>
-<p>select * from users where username like ‘%123’</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> username <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%123&#x27;</span><br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -277,6 +277,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/02/27/session%E5%92%8Cjwt%E7%9A%84%E8%AE%A4%E8%AF%81%E6%96%B9%E6%A1%88/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

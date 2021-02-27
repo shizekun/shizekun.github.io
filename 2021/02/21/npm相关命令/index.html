@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      688 字
+      684 字
     </span>
   
 
@@ -227,39 +227,56 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">title:</span>npm相关命令<br><span class="hljs-symbol">categories:</span><br>- npm 笔记<br></code></pre></td></tr></table></figure>
-<h4 id="1-包管理器"><a href="#1-包管理器" class="headerlink" title="1.包管理器"></a>1.包管理器</h4><p>Node.js 使用一款 npm 包管理器来管理所有的第三方包</p>
+              <hr>
+<h2 id="title-npm相关命令"><a href="#title-npm相关命令" class="headerlink" title="title:npm相关命令"></a>title:npm相关命令</h2><h4 id="1-包管理器"><a href="#1-包管理器" class="headerlink" title="1.包管理器"></a>1.包管理器</h4><p>Node.js 使用一款 npm 包管理器来管理所有的第三方包</p>
 <p>在 npm 网站上搜索你想要的包：<a target="_blank" rel="noopener" href="https://www.npmjs.com/">https://www.npmjs.com/</a></p>
 <p>在 npm 上下载包： <a target="_blank" rel="noopener" href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
-<h4 id="2-npm的一些常用命令"><a href="#2-npm的一些常用命令" class="headerlink" title="2.npm的一些常用命令"></a>2.npm的一些常用命令</h4><p>npm  -v   ：查看在自己电脑本机的npm</p>
-<p>npm  i  包的具体名称    ：下载一个指定的包</p>
-<p>npm  view  包的具体名称  ： 查看一个指定包</p>
-<p>npm  i  包的具体名称@版本号  ：下载指定版本的包</p>
-<p>npm init -y   :快速创建包管理配置文件(<strong>在项目的根目录下执行此命令</strong>)</p>
-<p>npm install  :其他项目成员在执行此命令时，会自动根据 package.json 文件中记录的包名称和版本信息全部进行下载</p>
-<h6 id="npm-uninstall-包名称-：-卸载指定的包"><a href="#npm-uninstall-包名称-：-卸载指定的包" class="headerlink" title="npm uninstall 包名称 ： 卸载指定的包"></a>npm uninstall 包名称 ： 卸载指定的包</h6><p>注意：</p>
+<h4 id="2-npm的一些常用命令"><a href="#2-npm的一些常用命令" class="headerlink" title="2.npm的一些常用命令"></a>2.npm的一些常用命令</h4><p>查看在自己电脑本机的npm:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span>  -v <br></code></pre></td></tr></table></figure>
+<p>下载一个指定的包:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span>  i  包的具体名称  <br></code></pre></td></tr></table></figure>
+<p>查看一个指定包</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span>  view  包的具体名称  <br></code></pre></td></tr></table></figure>
+<p>下载指定版本的包:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span>  i  包的具体名称@版本号  <br></code></pre></td></tr></table></figure>
+<p>快速创建包管理配置文件(<strong>在项目的根目录下执行此命令</strong>):</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> init -y   <br></code></pre></td></tr></table></figure>
+<p>其他项目成员在执行此命令时，会自动根据 package.json 文件中记录的包名称和版本信息全部进行下载:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span>  <br></code></pre></td></tr></table></figure>
+<h6 id="卸载指定的包"><a href="#卸载指定的包" class="headerlink" title="卸载指定的包:"></a>卸载指定的包:</h6><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> uninstall 包名称<br></code></pre></td></tr></table></figure>
+<p>注意：</p>
 <p>1.当命令执行成功后， dependencies 配置项下的包会自动移除</p>
 <p>2.卸载包的时候不需要指定版本号</p>
 <p> devDependencies 配置作用 </p>
-<p>​      只在本地开发测试阶段需要用到的包，一般记录在 devDependencies 配置项中，后期在进行项目打包上线的</p>
-<p>​    时候，并不会把这些包携带到线上环境</p>
-<p>​      <code>npm i --save-dev 包名称@版本号</code> 或 <code>npm i -D 包名称@版本号</code> ：   安装开发测试阶段用到的包</p>
-<p>npm config set registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a> ：更换国内的源</p>
-<p>npm config get registry  ：检查源有没有更换成功</p>
+<p>​      只在本地开发测试阶段需要用到的包，一般记录在 devDependencies 配置项中，后期在进行项目打包上线的时候，并不会把这些包携带到线上环境.</p>
+<p>   安装开发测试阶段用到的包:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i --save-dev 包名称@版本号 或 <span class="hljs-built_in">npm</span> i -D 包名称@版本号<br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm<span class="hljs-built_in"> config </span><span class="hljs-builtin-name">set</span> <span class="hljs-attribute">registry</span>=https://registry.npm.taobao.org ：更换国内的源<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm<span class="hljs-built_in"> config </span><span class="hljs-builtin-name">get</span> registry  ：检查源有没有更换成功<br></code></pre></td></tr></table></figure>
 <p>借助cnpm 这个包，提供了下载命令<strong>cnpm i</strong> 包名称</p>
-<p>npm  i -g nrm   =&gt; nrm ls =&gt;nrm use taobao</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livescript"><span class="hljs-built_in">npm</span>  i -g nrm   =&gt; nrm ls =&gt;nrm use taobao<br></code></pre></td></tr></table></figure>
 <h4 id="3-npm-的包从作用域上可以分为："><a href="#3-npm-的包从作用域上可以分为：" class="headerlink" title="3.npm 的包从作用域上可以分为："></a>3.npm 的包从作用域上可以分为：</h4><ol>
 <li>项目包： 被安装到项目的 node_modules 目录中的包，只能在当前项目下进行使用</li>
 </ol>
-<p>​      - [核心依赖包] 线上环境用到的依赖包： npm i 包名称</p>
-<p>​      - [开发依赖包] 开发测试环境用到的依赖包：npm i -D 包名称</p>
+<p>​      - [核心依赖包] 线上环境用到的依赖包：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i 包名称<br></code></pre></td></tr></table></figure>
+<p>​      - [开发依赖包] 开发测试环境用到的依赖包：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i -D 包名称<br></code></pre></td></tr></table></figure>
 <p>​    2. 全局包： 被下载到 node 安装位置 node_modules 目录下的包，可以在全局范围(任意目录)内使用</p>
-<p>​      安装命令： npm i -g 包名称</p>
-<p>​      卸载命令： npm uninstall -g 包名称</p>
-<h4 id="4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包"><a href="#4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包" class="headerlink" title="4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包"></a>4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包</h4><p>​    1. 安装全局包： npm i -g i5ting_toc </p>
+<p>​      安装命令：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i -g 包名称<br></code></pre></td></tr></table></figure>
+<p>​      卸载命令：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> uninstall -g 包名称<br></code></pre></td></tr></table></figure>
+<h4 id="4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包"><a href="#4-使用一个把-markdown-格式的文档转成-html-格式文件的工具包" class="headerlink" title="4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包"></a>4.使用一个把 markdown 格式的文档转成 html 格式文件的工具包</h4><p>​    1. 安装全局包 </p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">npm</span> i -g i<span class="hljs-number">5</span>ting_toc <br></code></pre></td></tr></table></figure>
 <ol start="2">
-<li>使用全局命令： <code>i5ting_toc -f 要转换的md文件 index.html</code></li>
+<li>使用全局命令：</li>
 </ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">i5ting_toc <span class="hljs-operator">-f</span> 要转换的<span class="hljs-built_in">md</span>文件 index.html<br></code></pre></td></tr></table></figure>
+
+
 <h4 id="5-发布包的步骤"><a href="#5-发布包的步骤" class="headerlink" title="5.发布包的步骤:"></a>5.发布包的步骤:</h4><p>​      1. 编写包的说明文档 </p>
 <p>​      在包的根目录下添加文件 README.md 文件</p>
 <p>​      2. 注册一个 npm 账号</p>
